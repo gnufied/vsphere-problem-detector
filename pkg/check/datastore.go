@@ -257,6 +257,9 @@ func checkDataStore(ctx *CheckContext, dsName string, infrastructure *configv1.I
 	if err := checkVolumeName(volumeName); err != nil {
 		return fmt.Errorf("datastore %s: %s", dsName, err)
 	}
+	if err := checkForDatastoreCluster(ctx, dsName); err != nil {
+		return fmt.Errorf("datastore %s: %s", dsName, err)
+	}
 	return nil
 }
 
