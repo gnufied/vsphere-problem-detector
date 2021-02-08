@@ -339,6 +339,7 @@ func checkForDatastoreCluster(ctx *CheckContext, dataStoreName string) error {
 			}
 		}
 	}
+	klog.V(2).Infof("Checked datastore %s for SRDS - no problems found", dataStoreName)
 	return nil
 }
 
